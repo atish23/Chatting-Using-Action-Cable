@@ -18,7 +18,7 @@
                       <span class="name"> <%= chatroom.name.capitalize! %></span><br/><br/>
                       <span><%= link_to("Join", chatroom_chatroom_users_path(chatroom), method: :post,class: "btn btn-success") %></span>                        
                       <span><%=link_to("Leave", chatroom_chatroom_users_path(chatroom), method: :delete,class: "btn btn-danger") %></span>
-                      <span><%= link_to 'Show', chatroom,class: "btn btn-info" %></span>
+                      <!-- <span><%#= link_to 'Show', chatroom,class: "btn btn-info" %></span> -->
                       <span><%= link_to 'Edit', edit_chatroom_path(chatroom),class: "btn btn-primary" %></span>
                       <span><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-warning" %></span>
                   </div>
