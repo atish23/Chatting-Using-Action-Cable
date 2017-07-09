@@ -47,7 +47,7 @@
         <% end %>
       </ul>
      </div><!--chat_area-->
-	    <%= form_for [@chatroom, Message.new],remote: true do |f| %>
+	    <%= form_for [@chatroom, Message.new] do |f| %>
 		     <div class="message_write">
 					 <%= f.text_area :body,class: "form-control", rows: 1 %>
 			     <div class="clearfix"></div>

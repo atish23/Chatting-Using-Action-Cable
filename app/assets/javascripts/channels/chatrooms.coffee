@@ -10,6 +10,14 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
   	chatroom_count = $("[data-behavior='messages'][data-chatroom-id='#{data.chatroom_id}']")
   	if chatroom_count.length > 0
   		chatroom_count.append(data.message)
+  		console.log(data)
+  		if document.hidden
+  			if Notification.permission == "granted" 
+        	new Notification("Message", {body: "Please Check new Message"})
   	else
   		$("[data-behavior='link-chatroom'][data-chatroom-id='#{data.chatroom_id}']").css("color","red")
   		$("[data-behavior='count'][data-chatroom-id='#{data.chatroom_id}']").append("1")
+
+
+  send_message: (chatroom_id, message)	->
+  	@perform "send_message", {chatroom_id: chatroom_id, body: message}
