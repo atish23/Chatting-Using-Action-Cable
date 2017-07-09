@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+      <div class="panel panel-default">
+          <div class="panel-heading c-list">
+              <span class="title">Chatrooms</span>
+              <ul class="pull-right c-controls">
+                  <li><%= link_to('<i class="glyphicon glyphicon-plus"></i>'.html_safe, new_chatroom_path) %></li>
+              </ul>
+          </div>
+
+          <ul class="list-group" id="contact-list">
+           <% @chatrooms.each_with_index do |chatroom,index| %>
+              <li class="list-group-item">
+                  <div class="col-xs-12 col-sm-3">
+                      <img src="http://api.randomuser.me/portraits/men/4<%= index %>.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
+                  </div>
+                  <div class="col-xs-12 col-sm-9">
+                      <span class="name"> <%= chatroom.name.capitalize! %></span><br/><br/>
+                      <span><%= link_to("Join", chatroom_chatroom_users_path(chatroom), method: :post,class: "btn btn-success") %></span>                        
+                      <span><%=link_to("Leave", chatroom_chatroom_users_path(chatroom), method: :delete,class: "btn btn-danger") %></span>
+                      <span><%= link_to 'Show', chatroom,class: "btn btn-info" %></span>
+                      <span><%= link_to 'Edit', edit_chatroom_path(chatroom),class: "btn btn-primary" %></span>
+                      <span><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-warning" %></span>
+                  </div>
+                  <div class="clearfix"></div>
+              </li>
+            <% end %>
+          </ul>
+      </div>
+  </div>
+</div>
