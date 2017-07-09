@@ -7,4 +7,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:ad969aa346205f50618fa35be39ce62f@greeneye.redistogo.com:11894/
+  url: redis://redistogo:f52b71517cd9101398afe3b7772eacd7@greeneye.redistogo.com:11894/
